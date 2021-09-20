@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 //Configure a port address.
 const port = 5000;
+
+//Make the app listen to port.
 app.listen(port, () => {
-    console.log('Server started in port ${port}.');
+    console.log(`Server started in port ${port}.`);
 });
