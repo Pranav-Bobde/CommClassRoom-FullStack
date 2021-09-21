@@ -1,13 +1,18 @@
 //Temporary User's Data
 const Users = require("../constants/Users.json");
 
-export const CheckUserNamePassword = (Username, Password) => {
+const CheckUserNamePassword = (Username, Password) => {
     if(typeof Users[Username] !== "undefined") {
-        return Users[Username];
+        if(Users[Username].Password === Password) {
+            return Users[Username];
+        } else {
+            return false;
+        }
     } else {
-        return false;
+        return undefined;
     }
 };
 
-console.log(CheckUserNamePassword("Praveen"));
-console.log(CheckUserNamePassword("Pranav"));
+module.exports = {
+    CheckUserNamePassword
+};
