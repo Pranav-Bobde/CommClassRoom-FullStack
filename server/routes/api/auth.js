@@ -29,13 +29,13 @@ app.post("/login", (req, res) => {
             case 0:
                 res.status(404).json ({
                     Error: "User does not exist."
-                })
+                });
                 CurrentUser = null;
                 break;
             case -1:
                 res.status(400).json ({
                     Error: "Invalid Username or Password."
-                })
+                });
                 CurrentUser = null;
                 break;
                 default: 

@@ -11,6 +11,7 @@ const CheckUserNamePassword = (Username, Password) => {
             return -1;
         }
     } else {
+        //User does not exist
         return 0;
     }
 };
