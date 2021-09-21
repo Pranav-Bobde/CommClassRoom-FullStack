@@ -5,7 +5,7 @@ const app = express.Router();
 
 let CurrentUser = null;
 
-//Setup Login Path
+//Endpoint to check current logged in user
 app.get("/login", (req, res) => {
     if(CurrentUser) {
         res.json(CurrentUser);
@@ -15,6 +15,11 @@ app.get("/login", (req, res) => {
         })
     }
 });
+
+//Endpoint to login a user
+app.post("/login", (req, res) => {
+    res.json(req.body);
+})
 
 //Export the Router
 module.exports = app;
